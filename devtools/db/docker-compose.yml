@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  mariadb:
+    image: 'bitnami/mariadb:10.5'
+    container_name: 'mariadb'
+    ports:
+      - '3306:3306'
+    environment:
+      - MARIADB_ROOT_PASSWORD=1234
+    user: root
+    volumes:
+      - './mariadb:/bitnami'
+  phpmyadmin:
+    image: 'bitnami/phpmyadmin:5.1.0-debian-10-r46'
+    container_name: 'phpmyadmin'
+    ports:
+      - '8081:8080'
+    user: root
+    volumes:
+      - './phpmyadmin:/bitnami'
