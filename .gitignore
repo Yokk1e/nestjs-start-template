@@ -32,3 +32,12 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# devtools
+devtools/db/mariadb
+devtools/db/phpmyadmin
+
+# env
+.env
+
+
