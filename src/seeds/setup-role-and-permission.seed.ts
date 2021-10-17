@@ -22,12 +22,6 @@ export default class SetupRolesAndPermissions implements Seeder {
         { name: 'User_Create' },
         { name: 'User_Edit' },
         { name: 'User_Delete' },
-        { name: 'Content_Create' },
-        { name: 'Content_Edit' },
-        { name: 'Content_Delete' },
-        { name: 'Episode_Create' },
-        { name: 'Episode_Edit' },
-        { name: 'Episode_Delete' },
       ])
       .execute();
 
