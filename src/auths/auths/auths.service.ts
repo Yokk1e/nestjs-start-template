@@ -5,6 +5,7 @@ import { JwtService } from '@nestjs/jwt';
 
 import { UsersService } from '../../users/users/users.service';
 import { RefreshTokenDto } from './dto/refreshtoken.dto';
+import { Permission } from 'src/users/permissions/permission.entity';
 
 @Injectable()
 export class AuthsService {
@@ -30,6 +31,9 @@ export class AuthsService {
     const payload = {
       sub: user.id,
       email: user.email,
+      permissions: user.role.permissions.map(
+        (permission: Permission) => permission.name,
+      ),
     };
 
     const refreshToken = this.jwtService.sign(payload, {
